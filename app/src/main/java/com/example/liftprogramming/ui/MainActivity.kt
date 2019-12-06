@@ -12,13 +12,14 @@ import com.example.liftprogramming.model.LiftModel
 import com.example.liftprogramming.viewmodel.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : BaseActivity(R.layout.activity_main) {
+class MainActivity : BasicActivity() {
 
     var viewModel: MainActivityViewModel? = null
     private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
         viewModel = ViewModelProviders.of(this)[MainActivityViewModel::class.java]
 
@@ -26,18 +27,18 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
 
-
-        viewModel?.loadList()
-
         viewModel?.getLiftList()?.observe(this, Observer<List<LiftModel>>{ lift ->
 
-            val adapter = LiftAdapter(lift as ArrayList<LiftModel>)
+            val adapter = LiftAdapter(this,lift)
 
             recyclerView.adapter = adapter
 
 
 
         })
+        viewModel?.loadList()
+
+
 
 
     }

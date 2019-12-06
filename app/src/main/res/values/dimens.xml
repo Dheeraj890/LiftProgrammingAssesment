@@ -1,10 +1,10 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="padding_view">7dp</dimen>
-    <dimen name="stroke_width">2dp</dimen>
+    <dimen name="stroke_width">3dp</dimen>
     <dimen name="recycle_height">150dp</dimen>
     <dimen name="margin">3dp</dimen>
     <dimen name="margin_linear">4dp</dimen>
-    <dimen name="dimen_button">220dp</dimen>
+    <dimen name="dimen_button">250dp</dimen>
     <dimen name="height_linear">50dp</dimen>
 </resources>
