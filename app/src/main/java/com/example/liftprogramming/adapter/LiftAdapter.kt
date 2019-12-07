@@ -18,6 +18,16 @@ class LiftAdapter(val mContext:Context,val liftList: List<LiftModel>) :
 
     private val TYPE_FIRST_VIEW = 1
     private val TYPE_ANOTHER = 2
+
+
+    companion object{
+        private var itemSelected= mutableListOf<LiftModel>()
+
+
+    }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         var view:Any
@@ -79,6 +89,8 @@ class LiftAdapter(val mContext:Context,val liftList: List<LiftModel>) :
             textLiftDown.setOnClickListener(View.OnClickListener {
 
                 textLiftDown.setBackgroundResource(R.drawable.shape_layout_grey)
+                LiftAdapter.itemSelected.add(lift)
+
 
             })
 
@@ -87,39 +99,17 @@ class LiftAdapter(val mContext:Context,val liftList: List<LiftModel>) :
 
                 textLiftUp.setBackgroundResource(R.drawable.shape_layout_grey)
 
+                LiftAdapter.itemSelected.add(lift)
+
 
             })
 
-            if(pos==0){
-
-
-             //   setMargin(imageLift)
-            }
-        }
-
-        private fun setMargin(imageLift: View) {
-
-
-            val params = ConstraintLayout.LayoutParams(
-                ConstraintLayout.LayoutParams.WRAP_CONTENT,
-                ConstraintLayout.LayoutParams.WRAP_CONTENT
-            )
-            params.setMargins(0,  convertToPx(40f).toInt(), 0, 0)
-            imageLift.setLayoutParams(params)
-
 
         }
 
-        private fun convertToPx(px: Float): Float {
-
-            val r=context.resources
-
-            return TypedValue.applyDimension( TypedValue.COMPLEX_UNIT_DIP,
-                px,
-                r.getDisplayMetrics())
 
 
-        }
+
     }
 
 
@@ -141,6 +131,8 @@ class LiftAdapter(val mContext:Context,val liftList: List<LiftModel>) :
 
                 textLiftDown.setBackgroundResource(R.drawable.shape_layout_grey)
 
+                LiftAdapter.itemSelected.add(lift)
+
             })
 
 
@@ -149,8 +141,23 @@ class LiftAdapter(val mContext:Context,val liftList: List<LiftModel>) :
                 textLiftUp.setBackgroundResource(R.drawable.shape_layout_grey)
 
 
+                LiftAdapter.itemSelected.add(lift)
             })
 
         }
+    }
+
+
+    fun getSelectedItem(): MutableList<LiftModel> {
+
+
+        return itemSelected
+    }
+
+
+
+    fun clearItem() {
+
+         itemSelected.clear()
     }
 }

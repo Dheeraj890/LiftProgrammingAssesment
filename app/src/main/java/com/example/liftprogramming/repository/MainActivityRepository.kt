@@ -25,12 +25,12 @@ class MainActivityRepository {
     fun loadListLift(): List<LiftModel> {
 
 
-        val list= listOf<LiftModel>(LiftModel(6,"6","6"),LiftModel(5,"5","5")
+        val list= listOf<LiftModel>(LiftModel(0,"6","6"),LiftModel(1,"5","5")
 
-        ,LiftModel(4,"4","4"),LiftModel(3,"3","3"),LiftModel(2,"2","2")
+        ,LiftModel(2,"4","4"),LiftModel(3,"3","3"),LiftModel(4,"2","2")
 
 
-        ,LiftModel(1,"1","1"))
+        ,LiftModel(5,"1","1"))
 
 
         return list

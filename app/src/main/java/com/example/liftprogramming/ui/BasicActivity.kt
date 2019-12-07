@@ -1,11 +1,13 @@
 package com.example.liftprogramming.ui
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.liftprogramming.R
+import com.example.liftprogramming.model.LiftModel
+import java.util.*
 
-import kotlinx.android.synthetic.main.activity_basic.*
 
 open class BasicActivity : AppCompatActivity() {
 
@@ -15,5 +17,8 @@ open class BasicActivity : AppCompatActivity() {
 
 
     }
+
+
+
 
 }
