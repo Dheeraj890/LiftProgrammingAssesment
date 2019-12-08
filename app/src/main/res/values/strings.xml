@@ -4,4 +4,5 @@
     <string name="start_run">Start Run</string>
     <string name="title_activity_basic">BasicActivity</string>
     <string name="title_activity_result">ResultActivity</string>
+    <string name="toast_msg">Please Select the items to start</string>
 </resources>

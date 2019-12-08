@@ -48,28 +48,38 @@ class MainActivity : BasicActivity() {
 
         button.setOnClickListener {
 
-            val data = adapter?.getSelectedItem()
 
-            if (data?.size!! > 0) {
-
-                var sortedData = data.sortedWith(compareBy { it.liftDown })
-
-
-
-                postView(recyclerView, sortedData.size, sortedData)
-
-
-
-                adapter?.clearItem()
-
-
-            } else {
-
-                Toast.makeText(this, "Please Select the items to start", Toast.LENGTH_SHORT).show()
-            }
-
+            processClick()
 
         }
+
+
+    }
+
+    private fun processClick() {
+
+
+
+        val data = adapter?.getSelectedItem()
+
+        if (data?.size!! > 0) {
+
+            var sortedData = data.sortedWith(compareBy { it.liftDown })
+
+
+
+            postView(recyclerView, sortedData.size, sortedData)
+
+
+
+            adapter?.clearItem()
+
+
+        } else {
+
+            Toast.makeText(this, getString(R.string.toast_msg), Toast.LENGTH_SHORT).show()
+        }
+
 
 
     }
